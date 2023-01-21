@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function App() {
- const url = 
+ const url = ''
   function Fisker({imageUrl}) {
     const [image, setImage] = useState(null)
     useEffect(() => {
