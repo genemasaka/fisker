@@ -6,6 +6,33 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function App() {
+ const url = 
+  function Fisker({imageUrl}) {
+    const [image, setImage] = useState(null)
+    useEffect(() => {
+      async function getImage() {
+        const response = await fetch(imageUrl)
+        const blob = await response.blob()
+        const img = URL.createObjectURL(blob)
+        setImage(img)
+      }
+      getImage()
+    }, [imageUrl])
+
+    return (
+      <>
+      <div class="main">
+      <div class="card">
+        <img src={image} class="card-img-top" alt="..." />
+      <div class="card-body">
+        <p class="card-text">Fisker Ocean</p>
+      </div>
+      </div>
+      </div>
+      </>
+    )
+    
+    }
   // Declare a state variable called width with the value of the current window width
   const [width, setWidth] = useState(window.innerWidth)
   // useEffect hook allows to synchronize a component with an external system
@@ -37,6 +64,7 @@ function App() {
         </div>
       </div>
     </div>
+    <Fisker imageUrl={url} />
     </>
   );
 }
