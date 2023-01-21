@@ -7,6 +7,10 @@ import './App.css';
 
 function App() {
  const url = ''
+
+ //Fisker component that fetches an image from the provided url, converts it to a blob and creates an 
+ //object URL and then sets that object URL to the state variable "image" so that it can be used in the component.
+ //It uses the React Hooks "useState" and "useEffect" to handle state and side effects, respectively.
   function Fisker({imageUrl}) {
     const [image, setImage] = useState(null)
     useEffect(() => {
